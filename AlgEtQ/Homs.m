@@ -36,8 +36,12 @@ import "Ord.m" : MatrixAtoQ , MatrixQtoA;
 // Homomorphism to the Complex Numbers
 //------------
 
-intrinsic HomsToC(A::AlgEtQ : Prec:=30)->SeqEnum[Map]
-{Returns the sequence of homomorphisms from A to the complex field CC. The precision of CC is given by the optional parameter "Prec". Default value is 30}
+intrinsic HomsToC(A::AlgEtQ : Prec:=false)->SeqEnum[Map]
+{
+    Returns the sequence of homomorphisms from A to the complex field CC.
+    The precision of CC is given by the optional parameter "Prec".
+}
+    if Prec cmpeq false then Prec:=Precision(RealField()); end if;
     if not assigned A`HomsToC or (Prec ne Precision(Codomain(A`HomsToC[1]))) then
         CC:=ComplexField(Prec);
         images:=function(x)

@@ -259,7 +259,7 @@
 ## List of instrinsics in AlgEtQ/Homs.m:
 
 > <pre><b>HomsToC</b>(A::AlgEtQ : Prec:=30)->SeqEnum[Map]</pre>
-<em>Returns the sequence of homomorphisms from A to the complex field CC. The precision of CC is given by the optional parameter "Prec". Default value is 30</em>
+<em>Returns the sequence of homomorphisms from A to the complex field CC. The precision of CC is given by the optional parameter "Prec". Default value is the precision of the default real field.</em>
 
 > <pre><b>Hom</b>(A::AlgEtQ , B::AlgEtQ , img::SeqEnum[AlgEtQElt] : CheckMultiplicative:=false, CheckUnital:=false, ComputeInverse:=true)->Map</pre>
 <em>Given two étale algebras A and B and a sequence img of elements of B, returns the Q-algbra homomorphism defined by sending the AbsoluteBasis of A to img. The VarArg CheckMultiplicative determines if the multiplicativity of the defined map is checked, while the VarArg CheckUnital determines wheter One(A) is sent to One(B). If the VarArg ComputeInverse is true, it checkes whether the map is invertible and, if so, it defines also the inverse (by assigning preimages).</em>
